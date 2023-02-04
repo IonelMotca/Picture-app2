@@ -5,7 +5,7 @@ const MongoClient = mongodb.MongoClient;
 // let mongodbUrl = 'mongodb://127.0.0.1:27017';
 //let mongodbUrl = 'mongodb://mongo:pyIl6GGXCsWmpOHYP7FY@containers-us-west-151.railway.app:7206';
 
-if(process.env.MONGODB_URL){
+if(process.env.MONGO_URI){
   mongodbUrl = process.env.MONGODB_URL;
 }
 
