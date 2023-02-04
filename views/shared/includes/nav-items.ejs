@@ -1,0 +1,29 @@
+<ul class="nav-items">
+  <% if (!locals.isAdmin) { %>
+    <!-- <li><a href="/">Shop</a></li> -->
+    <li><a  class="cart-icon" href="/cart"><i class="ri-shopping-cart-line cart"></i><span class="badge"><%= locals.cart.totalQuantity %></span></a></li>
+  <% } %>
+
+  <% if (locals.isAuth && !locals.isAdmin) { %>
+    <li><a href="/orders">Comenzi</a></li>
+  <% } %>
+
+  <% if (locals.isAdmin) { %>
+    <li><a href="/admin/products">Administreaza  produsele</a></li>
+    <li><a href="/admin/orders">Administreaza comenzile</a></li>
+  <% } %>
+
+  <% if (!locals.isAuth) { %>
+    <li><a href="/signup">Inregistrare</a></li>
+    <li><a href="/login">Conectare</a></li>
+  <% } %>
+
+  <% if (locals.isAuth) { %>
+    <li>
+      <form action="/logout" method="POST">
+        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+        <button>Iesire</button>
+      </form>
+    </li>
+  <% } %>
+</ul>

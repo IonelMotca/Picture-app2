@@ -1,0 +1,55 @@
+h1 {
+  text-align: center;
+  color: white;
+}
+
+form {
+  max-width: 25rem;
+  margin: var(--space-8) auto;
+  padding: var(--space-4);
+  background-color: white;
+  border-radius: var(--border-radius-medium);
+  text-align: center;
+  opacity: 0.7;
+}
+
+form a {
+  color: black;
+}
+
+form a:hover {
+  transform: scale(1.2);
+}
+
+.logsig {
+  cursor: pointer;
+}
+
+.logsig:hover {
+  transform: scale(1.2);
+}
+
+#login {
+  box-shadow: inset 0 0 0 0 #edaf82;
+  transition:ease-out 0.5s;
+}
+
+#login:hover {
+  box-shadow: inset 300px 0 0 0 #edaf82;
+  cursor:pointer;
+  background-color: transparent;
+  color:white;
+}
+
+#login-singup {
+  box-shadow: inset 0 0 0 0 #edaf82;
+  transition:ease-out 0.5s;
+
+}
+
+#login-singup:hover {
+  box-shadow: inset 200px 0 0 0 #edaf82;
+  cursor:pointer;
+  background-color: transparent;
+  color:white;
+}

@@ -1,0 +1,190 @@
+#titlu-pagina {
+  font-family: "Aboreto";
+  text-align: center;
+  font-size: 5rem;
+  margin: 5rem 0 4rem 0;
+  color: white;
+  border-top-color: white;
+  border-top-style: double;
+  border-top-width: medium;
+  border-bottom-color: white;
+  border-bottom-style: double;
+  border-bottom-width: medium;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#qoute {
+  margin: 0 auto 6rem auto;
+  width:95%;
+  text-align: center;
+  color: black;
+  background-color: white;
+  padding:2rem;
+  animation: slide-in 1000ms;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+
+
+#products-grid {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.product-item {
+  text-align: center;
+  background-color: white;
+  height: 30rem;
+  overflow: hidden;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product-item:hover {
+   transform:scale(1.1);
+   transition: 1s ease;
+}
+
+.product-item img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  /* margin: 4rem 0; */
+}
+
+.product-item-content h2 {
+  font-size: 1.15rem;
+  margin: var(--space-2) 0;
+}
+
+.product-item-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top:2rem;
+  justify-content: center;
+}
+
+#product-details header {
+  background-color: transparent;
+  gap: var(--space-8);
+}
+
+#product-details img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--color-gray-100);
+}
+
+#product-info {
+  text-align: center;
+  color:white;
+}
+#product-info p {
+  font-size: 2rem;
+  padding:0;
+  margin: 4.5rem 0 0.5rem 0 ;
+}
+
+#product-description {
+  background-color: #ECE8DD;
+  padding: var(--space-8);
+  white-space: pre-wrap;
+  border-radius:  1rem;
+  font-family: "Nanum Myeongjo";
+}
+
+.btn-cart {
+  cursor: pointer;
+  font: inherit;
+  padding: var(--space-2) var(--space-6);
+  color: black;
+  background-color:transparent;
+  border: 1px solid black;
+  border-radius: var(--border-radius-small);
+  box-shadow: inset 0 0 0 0 #edaf82;
+  transition:ease-out 0.5s;
+}
+
+.btn-cart:hover {
+  box-shadow: inset 180px 0 0 0 #edaf82;
+  cursor:pointer;
+  background-color: transparent;
+  color:white;
+}
+
+.span-div{
+  padding:0;
+  display:grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-div-img{
+  background-color: black;
+  width:100px;
+  height:2px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+
+@media (min-width: 48rem) {
+  #product-details header {
+    display: grid;
+  }
+
+  #product-details img {
+    width: 100%;
+    height: 100%; 
+    margin: 0 auto;
+    object-fit: cover;
+  }
+
+  #product-info {
+    text-align: left;
+    color:white;
+  }
+
+  #titlu-pagina {
+    font-size: 7rem;
+  }
+
+  #qoute {
+    width:60%;
+  }
+
+  #qoute {
+    margin: 0 auto 13rem auto;
+  }
+  #product-info p {
+    font-size: 2rem;
+    padding:0;
+    margin: 0 0 0.5rem 0 ;
+  }
+
+}

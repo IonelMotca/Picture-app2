@@ -1,0 +1,20 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Picturi' }) %>
+<link rel="stylesheet" href="/styles/products.css">
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1 id="titlu-pagina">Picturi</h1>
+      <p id="qoute"><i class="ri-double-quotes-l"></i>Trebuie sa creez - eu - o lume, sau sa ma las robit in lumea altuia. Nu vreau sa judec, sa compar. Chemarea mea e sa creez.<i class="ri-double-quotes-r"></i><br><br>william blake
+      </p>
+      
+    
+    <ul id="products-grid">
+      <% for (const product of products) { %>
+        <li>
+          <%- include('../../shared/includes/product-item', { product: product }) %>
+        </li>
+      <% } %>
+    </ul>
+  </main>
+<%- include('../../shared/includes/footer') %>

@@ -1,0 +1,33 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Cosul tau' }) %>
+<link rel="stylesheet" href="/styles/cart.css">
+<script src="/scripts/cart-item-management.js" defer></script>
+</head>
+<body>
+  <%- include('../../shared/includes/header') %>
+  <main>
+    <h1>Cosul tau</h1>
+    <ul id="cart-items">
+      <% for (const cartItem of locals.cart.items) { %>
+        <li>
+          <%- include('includes/cart-item', { item: cartItem }) %>
+        </li>
+      <% } %>
+    </ul>
+    <div id="cart-total">
+      <p>Total: <span id="cart-total-price"><%= locals.cart.totalPrice.toFixed(2) %></span>Lei</p>
+
+      <% if (locals.isAuth && locals.cart.totalQuantity > 0) { %>
+        <form action="/orders" method="POST">
+          <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+          <button class="btn buy">Plata Online</button>
+        </form>
+        <form action="/ordersr" method="POST">
+          <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+          <button class="btn buy">Plata Ramburs</button>
+        </form>
+      <% } else { %>
+        <p id="cart-total-fallback">Adauga un produs apoi conecteaza-te pentru a finaliza comanda.</p>
+      <% } %>
+    </div>
+  </main>
+<%- include('../../shared/includes/footer') %>
