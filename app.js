@@ -4,11 +4,11 @@ const express = require('express');
 const csrf = require('csurf');
 const expressSession = require('express-session');
 
-let port = 3000;
+let port = process.env.PORT;
 
-if(process.env.PORT){
-  port = process.env.PORT;
-}
+// if(process.env.PORT){
+//   port = process.env.PORT;
+// }
 
 
 const createSessionConfig = require('./config/session');
