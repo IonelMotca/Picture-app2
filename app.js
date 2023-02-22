@@ -4,7 +4,7 @@ const express = require('express');
 const csrf = require('csurf');
 const expressSession = require('express-session');
 
-let port = process.env.PORT;
+
 
 // if(process.env.PORT){
 //   port = process.env.PORT;
@@ -30,6 +30,8 @@ const ordersRoutesr = require('./routes/orders.routesr');
 const footerRoutes = require('./routes/footer.routes');
 
 const app = express();
+
+let port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
