@@ -5,12 +5,6 @@ const csrf = require('csurf');
 const expressSession = require('express-session');
 
 
-
-// if(process.env.PORT){
-//   port = process.env.PORT;
-// }
-
-
 const createSessionConfig = require('./config/session');
 const db = require('./data/database');
 const addCsrfTokenMiddleware = require('./middlewares/csrf-token');
@@ -31,7 +25,11 @@ const footerRoutes = require('./routes/footer.routes');
 
 const app = express();
 
-let port = process.env.PORT || 3000;
+let port = 3000;
+
+if(process.env.PORT){
+  port = process.env.PORT;
+};
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
